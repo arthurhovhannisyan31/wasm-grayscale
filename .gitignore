@@ -22,3 +22,6 @@
 
 # eslint
 .eslintcache
+
+# typescript
+tsconfig.tsbuildinfo
