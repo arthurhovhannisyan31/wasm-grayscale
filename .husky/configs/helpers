@@ -1,0 +1,15 @@
+#!/bin/bash
+
+. "$(dirname "$0")/configs/colors"
+
+validate () {
+  for COMMAND in "$@"; do
+   printf "🤞 Running: $COMMAND \n"
+   if ! yarn $COMMAND
+   then
+       printf "👎 ${RED} Failed: $COMMAND \n${NC}"
+       exit 1
+   fi
+   printf "👏 ${GREEN} Success: $COMMAND \n\n${NC}"
+  done
+}

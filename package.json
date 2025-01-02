@@ -11,7 +11,9 @@
     "build": "next build",
     "start": "next start",
     "types": "NODE_OPTIONS=--max-old-space-size=8196 tsc -p tsconfig.json --noEmit",
-    "lint": "yarn eslint '**/*.{js,ts,tsx}' --cache --quiet"
+    "lint": "yarn eslint '**/*.{js,ts,tsx}' --cache --quiet",
+    "lint:staged": "./configs/scripts/lint-staged.sh",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "15.1.3",
@@ -25,6 +27,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.3",
+    "husky": "^9",
     "typescript": "^5"
   }
 }

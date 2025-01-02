@@ -12,7 +12,10 @@
 # packages
 .pnp.*
 /node_modules
+
+# next.js
 /.next/
+/build
 
 # env files
 *.env*
@@ -24,4 +27,14 @@
 .eslintcache
 
 # typescript
-tsconfig.tsbuildinfo
+*.tsbuildinfo
+next-env.d.ts
+
+# husky
+.husky/_
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
