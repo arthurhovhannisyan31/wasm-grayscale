@@ -1,0 +1,30 @@
+{
+  "extends": "./configs/typescript/tsconfig.rules.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "baseUrl": "src/",
+    "lib": ["dom", "dom.iterable", "esnext", "webworker" ],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "app/*": ["app/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "**/.*.js", // needed for config files with leading dot
+    "**/*.js",
+    "**/*.d.ts"
+  ],
+  "exclude": ["node_modules"]
+}

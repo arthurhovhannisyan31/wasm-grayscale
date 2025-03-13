@@ -1,4 +1,42 @@
 {
-  "name": "wasm_grayscale",
-  "packageManager": "yarn@4.3.1"
+  "name": "wasm-grayscale",
+  "private": true,
+  "packageManager": "yarn@4.6.0",
+  "engines": {
+    "node": "^22.9.0"
+  },
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "types": "NODE_OPTIONS=--max-old-space-size=8196 tsc -p tsconfig.json --noEmit",
+    "lint": "yarn eslint '**/*.{js,ts,tsx}' --cache --quiet",
+    "lint:staged": "./configs/scripts/lint-staged.sh",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
+    "next": "15.1.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@typescript-eslint/parser": "^8.19.0",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.3",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import-newlines": "^1.4.0",
+    "eslint-plugin-react": "^7.37.3",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-testing-library": "^7.1.1",
+    "globals": "^15.14.0",
+    "husky": "^9",
+    "typescript": "^5"
+  }
 }
