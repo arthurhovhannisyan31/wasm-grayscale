@@ -29,8 +29,8 @@ jobs:
       - name: Package audit
         run: yarn npm audit
 
-  code-validation:
-    name: Code validation
+  js-code-validation:
+    name: JS code validation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -62,3 +62,15 @@ jobs:
 
       - name: Validate linters
         run: yarn lint
+
+  rust-code-validation:
+    name: Rust code validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate cargo
+        run: |
+          cargo check
+        
