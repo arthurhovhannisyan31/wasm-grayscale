@@ -1,47 +1,46 @@
-import type { AlertProps } from "@mui/material";
-
 import { convertFileToDataURL, convertImageToDataURL, createImage, getImageFromFile } from "app/utility/helpers/image";
 
-import { baseCanvasProps, errorsDict, FILE_SIZE_LIMIT_MB, MIN_FILE_SIZE, supportedMimeTypes } from "./constants";
+import { baseCanvasProps, FILE_SIZE_LIMIT_MB, MIN_FILE_SIZE, supportedMimeTypes } from "./constants";
 import { type BaseImageDimensions } from "./types";
 
 export const imageFileValidation = (
   files: FileList,
-  setSnackbarProps: (message: string, severity: AlertProps["severity"]) => void,
+  // setSnackbarProps: (message: string, severity: AlertProps["severity"]) => void,
 ): boolean => {
   if (!files.length) return false;
 
   if (files.length > 1) {
-    setSnackbarProps(
-      errorsDict.filesQuantity,
-      "warning",
-    );
+    // setSnackbarProps(
+    //   errorsDict.filesQuantity,
+    //   "warning",
+    // );
+    return false;
   }
   const file = files[0];
 
   if (!file.type) {
-    setSnackbarProps(
-      errorsDict.fileType,
-      "error",
-    );
+    // setSnackbarProps(
+    //   errorsDict.fileType,
+    //   "error",
+    // );
 
     return false;
   }
 
   if (!supportedMimeTypes.includes(file.type)) {
-    setSnackbarProps(
-      errorsDict.filesExtension,
-      "error",
-    );
+    // setSnackbarProps(
+    //   errorsDict.filesExtension,
+    //   "error",
+    // );
 
     return false;
   }
 
   if (file.size > FILE_SIZE_LIMIT_MB) {
-    setSnackbarProps(
-      errorsDict.fileSize,
-      "error",
-    );
+    // setSnackbarProps(
+    //   errorsDict.fileSize,
+    //   "error",
+    // );
 
     return false;
   }

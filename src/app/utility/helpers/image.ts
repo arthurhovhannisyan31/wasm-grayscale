@@ -1,17 +1,19 @@
+/* returns base64 encoding string */
 export const convertFileToDataURL = (
   file: File,
 ): Promise<string> => new Promise((res, rej) => {
   const reader = new FileReader();
-  reader.readAsDataURL(file);
+
   reader.onload = () => res(reader.result as string);
   reader.onerror = rej;
+  reader.readAsDataURL(file);
 });
 
-export const convertImageToDataURL = async (
+export const convertImageToDataURL = (
   image: CanvasImageSource,
   width: number,
   height: number,
-): Promise<string> => {
+): string => {
   const canvas = document.createElement("canvas");
   canvas.width = width;
   canvas.height = height;

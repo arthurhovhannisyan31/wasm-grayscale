@@ -1,4 +1,4 @@
-import { BaseImageDimensions } from "app/components/images-container/types";
+import { type BaseImageDimensions } from "app/components/images-container/types";
 
 export const supportedMimeTypes: string[] = [
   "image/jpeg",
@@ -25,3 +25,5 @@ export const baseCanvasProps: BaseImageDimensions = {
 
 // 100kb
 export const MIN_FILE_SIZE = 100 * 1024;
+
+export const IMAGE_META_DATA_REGEX = /^data:image\/(png|jpeg|jpg|webp);base64,/;

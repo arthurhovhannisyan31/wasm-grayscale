@@ -203,9 +203,9 @@ export const importsConfigs = [
       },
     },
     rules: {
-      "import/no-named-as-default": "warn", // TODO
+      "import/no-named-as-default": "warn",
       "import/prefer-default-export": 0,
-      "import/no-extraneous-dependencies": "warn", // TODO
+      "import/no-extraneous-dependencies": "warn",
       "import/order": [
         "error",
         {
