@@ -3,7 +3,12 @@
   "compilerOptions": {
     "target": "ESNext",
     "baseUrl": "src/",
-    "lib": ["dom", "dom.iterable", "esnext", "webworker" ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "webworker"
+    ],
     "module": "esnext",
     "moduleResolution": "bundler",
     "jsx": "preserve",
@@ -13,8 +18,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "app/*": ["app/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "app/*": [
+        "app/*"
+      ]
     }
   },
   "include": [
@@ -22,9 +31,13 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "**/.*.js", // needed for config files with leading dot
+    "**/.*.js",
+    // needed for config files with leading dot
     "**/*.js",
     "**/*.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "pkg"
+  ]
 }

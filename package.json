@@ -12,6 +12,7 @@
     "start": "next start",
     "types": "NODE_OPTIONS=--max-old-space-size=8196 tsc -p tsconfig.json --noEmit",
     "lint": "yarn eslint '**/*.{js,ts,tsx}' --cache --quiet",
+    "lint:warn": "yarn lint --max-warnings 100",
     "lint:staged": "./configs/scripts/lint-staged.sh",
     "prepare": "husky"
   },
@@ -42,6 +43,7 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
+    "@wasm-tool/wasm-pack-plugin": "^1.7.0",
     "eslint": "^9.21.0",
     "eslint-config-next": "^15.2.0",
     "eslint-import-resolver-typescript": "^3.8.3",
