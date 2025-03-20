@@ -25,11 +25,6 @@ export const ImagesContainer: FC = () => {
       const imageData = await convertFileToDataURL(files[0]);
       const headlessImageData = imageData.replace(IMAGE_META_DATA_REGEX, "");
 
-      console.log({
-        headlessImageData,
-        wasm
-      });
-
       wasm?.grayscale(headlessImageData);
     } catch (e) {
       console.log(e);

@@ -8,7 +8,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "./configs/scripts/build.sh",
     "start": "next start",
     "types": "NODE_OPTIONS=--max-old-space-size=8196 tsc -p tsconfig.json --noEmit",
     "lint": "yarn eslint '**/*.{js,ts,tsx}' --cache --quiet",
