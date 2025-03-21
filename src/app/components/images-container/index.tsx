@@ -1,6 +1,7 @@
-import { FC, useRef } from "react";
+import { FC, useRef, useState } from "react";
 
 import { Box, Button, Input } from "@mui/material";
+import Image from "next/image";
 
 import { errorsDict, IMAGE_META_DATA_REGEX } from "app/components/images-container/constants";
 import { imageFileValidation } from "app/components/images-container/helpers";
@@ -12,6 +13,7 @@ import { inputStyles } from "app/components/images-container/styles";
 export const ImagesContainer: FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const wasm = useInitWasm();
+  const [imageData, setImageData] = useState("");
 
   const processFiles = async (files: FileList | null | undefined) => {
     if (!files) {
@@ -24,8 +26,11 @@ export const ImagesContainer: FC = () => {
     try {
       const imageData = await convertFileToDataURL(files[0]);
       const headlessImageData = imageData.replace(IMAGE_META_DATA_REGEX, "");
-
-      wasm?.grayscale(headlessImageData);
+      const image_base64_data = wasm?.grayscale(headlessImageData);
+      console.log({
+        image_base64_data
+      });
+      setImageData(imageData);
     } catch (e) {
       console.log(e);
       console.log(errorsDict.fileParsing);
@@ -54,6 +59,12 @@ export const ImagesContainer: FC = () => {
           onChange: handleFileChange
         }}
         sx={inputStyles}
+      />
+      <Image
+        src={imageData}
+        alt="Processed image"
+        width={500}
+        height={500}
       />
     </Box>
   );
